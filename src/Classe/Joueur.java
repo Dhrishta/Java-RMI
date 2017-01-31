@@ -3,7 +3,7 @@ package Classe;
 import java.util.Scanner;
 
 public class Joueur {
-	private String Test ;
+
 	private String nom ;
 	private int points ;
 	private String position ;
