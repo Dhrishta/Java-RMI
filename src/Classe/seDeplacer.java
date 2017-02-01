@@ -1,5 +1,6 @@
 package Classe;
+import java.rmi.*;
 
-public class seDeplacer {
-
+public interface seDeplacer extends java.rmi.Remote {
+	String seDeplacer() throws java.rmi.RemoteException ;
 }
