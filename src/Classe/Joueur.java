@@ -36,7 +36,7 @@ public class Joueur {
 		System.out.println("Entrez le nom du Joueur !");
         Scanner scan = new Scanner (System.in) ;
         String n = scan.next();
-        System.out.println("Bienvenue +n+ !");
+        System.out.println("Bienvenue "+n+"!");
 		 	
 	}
 }

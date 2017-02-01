@@ -3,49 +3,80 @@ package Classe;
 import java.util.ArrayList;
 
 public class Labyrinthe {
-private Piece Salle ;
-// private ArrayList <String> Piece = new ArrayList<String>();
- 
- 		public void createLabyrinthe(){
- 			
- 			//Creation de pieces
-			Position p1 = new Position (1,1) ;
- 			Piece Salle1 = new Piece ("Chambre1",p1,) ;
-			Position p2 = new Position (1,2) ;
- 			Piece Salle2 = new Piece ("Chamnbre2",p2) ;
-			Position p3 = new Position (1,4) ;
- 			Piece Salle3 = new Piece ("Chamnbre3",p3) ;
-			Position p4 = new Position (1,5) ;
- 			Piece Salle4 = new Piece ("Chamnbre4",p4) ;
-			Position p5 = new Position (2,1) ;
- 			Piece Salle5 = new Piece ("Chamnbre5",p5) ;
-			Position p6 = new Position (2,3) ;
- 			Piece Salle6 = new Piece ("Chamnbre6",p6) ;
-			Position p7 = new Position (2,4) ;
- 			Piece Salle7 = new Piece ("Chamnbre7",p7) ;
-			Position p8 = new Position (3,1) ;
- 			Piece Salle8 = new Piece ("Chamnbre8",p8) ;
-			Position p9 = new Position (3,2) ;
- 			Piece Salle9 = new Piece ("Chamnbre9",p9) ;
-			Position p10 = new Position (3,3) ;
- 			Piece Salle10 = new Piece ("Chamnbre10",p10) ;
-			Position p11 = new Position (3,4) ;
- 			Piece Salle11 = new Piece ("Chamnbre11",p11) ;
-			Position p12 = new Position (4,1) ;
- 			Piece Salle12 = new Piece ("Chamnbre11",p11) ;
-			Position p13 = new Position (4,4) ;
- 			Piece Salle13 = new Piece ("Chamnbre13",p13) ;
-			Position p14 = new Position (5,1) ;
- 			Piece Salle14 = new Piece ("Chamnbre14",p14) ;
-			Position p15 = new Position (5,2) ;
- 			Piece Salle15 = new Piece ("Chamnbre15",p15) ;
-			Position p16 = new Position (5,3) ;
- 			Piece Salle16 = new Piece ("Chamnbre16",p16) ;
-			Position p17= new Position (5,4) ;
- 			Piece Salle17 = new Piece ("Chamnbre17",p17) ;
+	private ArrayList <Piece> Salle = new ArrayList <Piece>() ;  		
+	private ArrayList<Porte> P = new ArrayList<Porte>();
 
-			
+public Labyrinthe(ArrayList<Piece> salle, ArrayList<Porte> p) {
+		super();
+		Salle = salle;
+		P = p;
+	}
+
+public ArrayList<Piece> getSalle() {
+	return Salle;
+}
+
+public void setSalle(ArrayList<Piece> salle) {
+	Salle = salle;
+}
+
+public ArrayList<Porte> getP() {
+	return P;
+}
+
+public void setP(ArrayList<Porte> p) {
+	P = p;
+}
+
+public void createLabyrinthe(){
+ 		
+ 		Labyrinthe Lab1 = new Labyrinthe (Salle, P) ;
+ 		
+ 		//Lab.add(e)
+ 		
+ 	    //Creation de pieces
+		// A corriger	
+ 		Position p1 = new Position (1,1) ;
+ 		Piece S1 = new Piece ("La Chambre qui pue la mort",p1) ;	
+ 		Position p2 = new Position (1,2) ;
+		Piece S2 = new Piece ("Le Dongeon du Dragon",p2) ;
+		
+		//Creation de porte de la piece1_2
+		Porte P1_2 = new Porte(S1,S2,p1,p2);
+		Position p3 = new Position (1,4) ;
+ 		Piece S3 = new Piece ("Les Egouts",p3) ;
+ 		
+ 		//Creation de porte de la piece1_3
+ 		Porte P1_3 = new Porte(S1,S3,p1,p3) ;
+		
+ 		//Creation de porte de la piece2_3
+ 		Porte P2_3 = new Porte(S2,S3,p2,p3);
+ 		
+ 		//Creation de la piece 4 et 5
+ 		Position p4 = new Position (1,5) ;
+ 		Piece S4 = new Piece ("Les toilettes débordantes",p4) ;
+		Position p5 = new Position (2,1) ;
+ 		Piece S5 = new Piece ("La chambre de Donald Duck",p5) ;
+ 		
+ 		//Creation de la porte de la piece 2_4,3_4,3_5
+ 		Porte P2_4 = new Porte(S2,S4,p2,p4);
+ 		Porte P3_4 = new Porte(S3,S4,p3,p4);
+ 		Porte P3_5 = new Porte(S3,S4,p3,p5);
+
+		//Sauvegarde dans l'array Lab
+		Lab1.add(S1,P1_2) ;
+        Lab1.add(S1, P1_3);
+        Lab1.add(S2,P2_3) ;
+        Lab1.add(S2, P3_4);
+        Lab1.add(S3, P3_4);
+        Lab1.add(S3,P3_5);			
+ 			
  		}
+
+private void add(Piece s1, Porte p1_2) {
+	// TODO Auto-generated method stub
+	
+}
  
  		
 

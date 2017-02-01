@@ -5,6 +5,7 @@ public class Porte {
 	private Piece Salle2 ;
 	private Position Post1 ;//La position de la sortie par rapport à la piece1
 	private Position Post2 ;// La position de la sortie par rapport à la pièce2
+	//Constructor
 	public Porte(Piece salle1, Piece salle2, Position post1, Position post2) {
 		super();
 		Salle1 = salle1;
