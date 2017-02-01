@@ -3,33 +3,69 @@ package Classe;
 import java.util.Vector;
 
 public class Piece {
-	// variables
+	   // variables
 		private String titrePiece;
-		private String descPiece;
-		private Vector vecSortie;
-
+		private Position post ;
+	    private Porte Exit ; 
+	    
+		public Piece(String titrePiece, Position post, Porte Exit) {
+			super();
+			this.titrePiece = titrePiece;
+			this.post = post;
+			this.Exit = Exit ;
+			//this.vecSortie = vecSortie;
+		}
 		
 		public Piece()
 		{
-			// description
-			titrePiece = new String ();
-			descPiece = new String();
-			vecSortie = new Vector();
+		  // description
+			titrePiece = new String () ;
+			
+	//		vecSortie = new Vector();
 		}
+		
+		public String getTitrePiece() {
+			return titrePiece;
+		}
+
+		public void setTitrePiece(String titrePiece) {
+			this.titrePiece = titrePiece;
+		}
+
+		public Position getPost() {
+			return post;
+		}
+
+		public void setPost(Position post) {
+			this.post = post;
+		}
+
+		public Vector getVecSortie() {
+			return vecSortie;
+		}
+
+
+		public void setVecSortie(Vector vecSortie) {
+			this.vecSortie = vecSortie;
+		}
+
+	
+		//	private String descPiece;
+		private Vector vecSortie;
 
 		
 		public Piece ( String title )
 		{
 
 			titrePiece = title;
-			descPiece = new String();
+		//descPiece = new String();
 			vecSortie = new Vector();
 		}
 
 		public Piece( String title, String description )
 		{
 			titrePiece = title;
-			descPiece = description;
+		//	descPiece = description;
 			vecSortie = new Vector();
 		}
 
@@ -72,17 +108,7 @@ public class Piece {
 			titrePiece = roomTitle;
 		}
 
-		// Returns location description
-		public String getDescription()
-		{
-			return descPiece;
-		}
-
-		// Assigns location description
-		public void setDescription( String roomDescription )
-		{
-			descPiece = roomDescription;
-		}
+		
 	
 	}
 

@@ -3,7 +3,7 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject ;
 
-public class Serveur extends UnicastRemoteObject implements seDeplacer {
+public class Serveur extends UnicastRemoteObject implements MudInterface {
 
 	private static Remote obj;
 	protected Serveur() throws RemoteException {
@@ -12,10 +12,14 @@ public class Serveur extends UnicastRemoteObject implements seDeplacer {
 	}
 
 	@Override
-	public String seDeplacer() throws RemoteException {
+	public String MudInterface() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	//public void piecesvoisine () throws RemoteException{
+		
+   //	}
  public static void main(String arg []) throws Exception {
 	 //Démarrer le rmi registry
 	 LocateRegistry.createRegistry(1099);
