@@ -7,7 +7,7 @@ public class Joueur {
 	private String nom ;
 	private int points ;
 	private String position ;
-	public Joueur(String nom, int points, String position) {
+	public Joueur(String nom, int points, String position, String password) {
 		super();
 		this.nom = nom;
 		this.points = points;
@@ -38,6 +38,10 @@ public class Joueur {
         String n = scan.next();
         System.out.println("Bienvenue "+n+"!");
 		 	
+	}
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
  
