@@ -1,8 +1,5 @@
 package Classe;
 
-import java.util.ArrayList;
-import java.util.Vector;
-
 public class Piece {
 	   // variables
 		private String titrePiece;

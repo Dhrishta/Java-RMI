@@ -61,13 +61,13 @@ public void createLabyrinthe(){
  		//Creation de la porte de la piece 2_4,3_4,3_5
  		Porte P2_4 = new Porte(S2,S4,p2,p4);
  		Porte P3_4 = new Porte(S3,S4,p3,p4);
- 		Porte P3_5 = new Porte(S3,S4,p3,p5);
+ 		Porte P3_5 = new Porte(S3,S5,p3,p5);
 
 		//Sauvegarde dans l'array Lab
 		Lab1.add(S1,P1_2) ;
         Lab1.add(S1, P1_3);
         Lab1.add(S2,P2_3) ;
-        Lab1.add(S2, P3_4);
+        Lab1.add(S2, P2_4);
         Lab1.add(S3, P3_4);
         Lab1.add(S3,P3_5);			
  			
