@@ -5,13 +5,13 @@ import java.rmi.*;
 import java.util.Scanner;
 
 public class Client {
-	private static MudInterface Objetdirection;
+
 	private Scanner n;
 	private String nomr; 
 	private String password ;
 
 	//CONNEXION AVEC NOM JOUEUR 
-	public void connexion (String nomP, String password)
+	public void connexion (MudInterface MUD)
 	
 	{	
 		System.out.println("Entrez votre nom :) ");
@@ -24,9 +24,11 @@ public class Client {
 		
 		try {
 			
-			Objetdirection.authentificationreussi(nomP , password) ;
+			String nomP = null;
+			MUD.authentificationreussi(nomP , password) ;
 			
-			if (Objetdirection.authentificationreussi(nomP ,password))
+  
+		    if (MUD.authentificationreussi(nomP ,password))
 			{
 			System.out.println("Bonjour connexion reussi:D ");
 			}
@@ -42,27 +44,29 @@ public class Client {
 		
 	}
 	
-	//
-	
 		
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub 
 		
-		try {
+	
 			//R√©cup√©ration d'un proxy sur l'objet
-			setObjetdirection((MudInterface)Naming.lookup("//localhost/serveur/1111"));
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NotBoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		
+			try {
+				MudInterface MUD = (MudInterface)Naming.lookup("//localhost/ServeurMUD");
+				System.out.println("Vous êtes connecté au serveur, Bienvenue :) ");
+				Client client1 = new Client() ;
+				client1.connexion(MUD);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NotBoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 	}
 
 
@@ -84,15 +88,6 @@ public class Client {
 		this.password = password;
 	}
 
-	public static MudInterface getObjetdirection() {
-		return Objetdirection;
-	}
-
-
-	public static void setObjetdirection(MudInterface objetdirection) {
-		Objetdirection = objetdirection;
-	}
-	
 	
 	}
 

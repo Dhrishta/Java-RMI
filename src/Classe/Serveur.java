@@ -10,7 +10,7 @@ public class Serveur extends UnicastRemoteObject implements MudInterface {
  
 private ArrayList <Joueur> listejoueur ;
 
-	private static Remote obj;
+	
 	protected Serveur() throws RemoteException {
 		super();
 		listejoueur=new ArrayList<>() ;
@@ -19,7 +19,7 @@ private ArrayList <Joueur> listejoueur ;
 
 	
 	
-	
+private static final long serialVersionUID = 1L ;
 		
   
  public static void main(String arg []) throws Exception {
@@ -27,7 +27,8 @@ private ArrayList <Joueur> listejoueur ;
 	 LocateRegistry.createRegistry(1099);
 	 //Gestionnaire de sécurité
 	 //System.setSecurityManager(new RMISecurityManager());
-	 Naming.rebind("Serveur", obj) ;
+	 Serveur obj = new Serveur();
+	 Naming.rebind("ServeurMUD", obj) ;
 	 System.out.println("Welcome to the Dungeons of Hogwarts!");
  }
 
