@@ -6,12 +6,12 @@ public class Joueur {
 
 	private String nom ;
 	private int points ;
-	private String position ;
-	public Joueur(String nom, int points, String position, String password) {
+	private Position pos ;
+	public Joueur(String nom, int points, Position p1) {
 		super();
 		this.nom = nom;
 		this.points = points;
-		this.position = position;
+		this.pos = p1;
 	}
 	public String getNom() {
 		return nom;
@@ -25,11 +25,11 @@ public class Joueur {
 	public void setPoints(int points) {
 		this.points = points;
 	}
-	public String getPosition() {
-		return position;
+	public Position getPosition() {
+		return pos;
 	}
-	public void setPosition(String position) {
-		this.position = position;
+	public void setPosition(Position pos) {
+		this.pos = pos;
 	} 
 	
 	public void creationJoeur(String nom){

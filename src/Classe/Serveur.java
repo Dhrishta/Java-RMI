@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Serveur extends UnicastRemoteObject implements MudInterface {
+ static Labyrinthe Lab1 = new Labyrinthe(null, null);
  
-private ArrayList <Joueur> listejoueur ;
 
 	
 	protected Serveur() throws RemoteException {
 		super();
-		listejoueur=new ArrayList<>() ;
+	    this.Lab1 = Lab1 ;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -32,8 +32,6 @@ private static final long serialVersionUID = 1L ;
 	 System.out.println("Serveur est connecté!");
  }
 
-
-
 @Override
 public boolean authentificationreussi(String nomP,String password) throws RemoteException
 {
@@ -49,62 +47,27 @@ public boolean authentificationreussi(String nomP,String password) throws Remote
 
 
 @Override
-public boolean creationreussi(String nomP,String password) throws RemoteException
-{
-	// TODO Auto-generated method stub
-	System.out.println("Entrez le nom du joueur !");
-	
-		if (!joueurexistdeja( nomP,password)) 
-		{
-			Joueur r = new Joueur(nomP,1,"10",password) ;
-			
-			System.out.println("Bienvenue"+r);
-		}
-
-	return false;
-}
-
-
-
-@Override
-public boolean joueurexistdeja(String nomP,String password) throws RemoteException
-
-{
-	for ( Joueur j : listejoueur)
-	{
-		if  (j.getNom().equals(nomP) && (j.getPassword().equals(password)));
-		return true ;
-	}
-	
-	// TODO Auto-generated method stub
-	return false;
-}
-
-
-
-@Override
-public void deplacementjoueur(String nom, char position) throws RemoteException {
-	// TODO Auto-generated method stub
-	
-}
-
-
-
-public ArrayList getListejoueur() {
-	return listejoueur;
-}
-
-
-
-public void setListejoueur(ArrayList listejoueur) {
-	this.listejoueur = listejoueur;
-}
-
-
-
-@Override
 public void affichage() throws RemoteException {
 	// TODO Auto-generated method stub
 	
+}
+
+
+@Override
+public void deplacementjoueur(String nomP, char position) throws RemoteException {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public boolean creationreussi(String nomP, String password) throws RemoteException {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean joueurexistdeja(String nomP, String password) throws RemoteException {
+	// TODO Auto-generated method stub
+	return false;
 }	 
 }
