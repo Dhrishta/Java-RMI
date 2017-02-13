@@ -9,41 +9,14 @@ public class Client {
 	private Scanner n;
 	private String nomr; 
 	private String password ;
-
+	
 	//CONNEXION AVEC NOM JOUEUR 
 	public void connexion (MudInterface MUD)
 	
 	{	
-		System.out.println("Entrez votre nom :) ");
-		n = new Scanner (System.in);
-		setNomr(n.nextLine());
-		
-		System.out.println("Entrez votre password :) ");
-		Scanner p = new Scanner (System.in);
-		setpassword(p.nextLine());
-		
-		try {
-			
-			String nomP = null;
-			MUD.authentificationreussi(nomP , password) ;
-			
-  
-		    if (MUD.authentificationreussi(nomP ,password))
-			{
-			System.out.println("Bonjour connexion reussi:D ");
-			}
-			else
-			{
-			System.out.println("connexion echouÈe rentrez vos id ");
-			}
-				
-			} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			}
-		
+		Menu M1 = new Menu() ;
+		M1.affichage();
 	}
-	
 		
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub 
@@ -68,7 +41,7 @@ public class Client {
 			}
 			
 	}
-
+	
 
 	public String getNomr() {
 		return nomr;

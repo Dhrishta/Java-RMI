@@ -10,4 +10,5 @@ public boolean authentificationreussi (String nomP , String password ) throws Re
 public boolean creationreussi (String nomP ,String password ) throws RemoteException ;
 public boolean joueurexistdeja  (String nomP , String password) throws RemoteException ;
 public void deplacementjoueur (String nomP , char position) throws RemoteException ;
+public void affichage() throws RemoteException ;
 }

@@ -29,7 +29,7 @@ private static final long serialVersionUID = 1L ;
 	 //System.setSecurityManager(new RMISecurityManager());
 	 Serveur obj = new Serveur();
 	 Naming.rebind("ServeurMUD", obj) ;
-	 System.out.println("Welcome to the Dungeons of Hogwarts!");
+	 System.out.println("Serveur est connecté!");
  }
 
 
@@ -98,5 +98,13 @@ public ArrayList getListejoueur() {
 
 public void setListejoueur(ArrayList listejoueur) {
 	this.listejoueur = listejoueur;
+}
+
+
+
+@Override
+public void affichage() throws RemoteException {
+	// TODO Auto-generated method stub
+	
 }	 
 }
