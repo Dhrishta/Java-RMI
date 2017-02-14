@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Serveur extends UnicastRemoteObject implements MudInterface {
- static Labyrinthe Lab1 = new Labyrinthe(null, null);
+ 
  
 
 	
 	protected Serveur() throws RemoteException {
-		super();
-	    this.Lab1 = Lab1 ;
+		
 		// TODO Auto-generated constructor stub
 	}
 

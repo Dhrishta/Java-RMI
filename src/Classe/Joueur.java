@@ -6,12 +6,21 @@ public class Joueur {
 
 	private String nom ;
 	private int points ;
-	private Position pos ;
-	public Joueur(String nom, int points, Position p1) {
+	private Piece Salle1 ;
+	public Joueur (){
+		super();
+	}
+	public Joueur(String nom, int points, Piece Salle1) {
 		super();
 		this.nom = nom;
 		this.points = points;
-		this.pos = p1;
+		this.Salle1 = Salle1;
+	}
+	public Piece getSalle1() {
+		return Salle1;
+	}
+	public void setSalle1(Piece salle1) {
+		Salle1 = salle1;
 	}
 	public String getNom() {
 		return nom;
@@ -25,20 +34,14 @@ public class Joueur {
 	public void setPoints(int points) {
 		this.points = points;
 	}
-	public Position getPosition() {
-		return pos;
-	}
-	public void setPosition(Position pos) {
-		this.pos = pos;
-	} 
 	
-	public void creationJoeur(String nom){
-		System.out.println("Entrez le nom du Joueur !");
+	public String creationJoueur(){
+	System.out.println("Entrez le nom du Joueur !");
         Scanner scan = new Scanner (System.in) ;
-        String n = scan.next();
+        String n = scan.next();       
         System.out.println("Bienvenue "+n+"!");
-		 	
-	}
+        return n;
+		 		}
 	public Object getPassword() {
 		// TODO Auto-generated method stub
 		return null;

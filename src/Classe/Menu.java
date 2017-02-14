@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 
 public class Menu {
- private Scanner n;
- private String nom;
+	 private Scanner n;
+	 private String nom;
 //Menu pour démarrer le jeu	
 
 /**
@@ -52,20 +52,19 @@ public void affichage(){
 	
 	switch(selection){
 	case 1:System.out.println("WHAT IS YOUR NAME BRAVE WIZARD?");
-	       n = new Scanner(System.in);
-	       nom =(n.nextLine());
-	       Position p1 = new Position (1,1);
-	       Joueur J1 = new Joueur(nom,10,p1) ;
-	       System.out.println("Welcome to the Dungeons of Hogwarts "+ nom);
+			Joueur j = new Joueur();
+	       j.setNom(j.creationJoueur());
+	       System.out.println("Welcome to the Dungeons of Hogwarts "+j.getNom());
 	       System.out.println("You are now entering the Dungeon by the first room") ;
-	       System.out.println("You have 10 points");
+	       System.out.println("You have 10 wands");
 	       System.out.println("May the will of Witchcrafts and Wizardry be with you !\n");
 	
 	       
-	case 2 : System.out.println("Farewell");
+	case 2: System.out.println("Farewell");
 	                 }
 	
              }
+
 }
 	
 	

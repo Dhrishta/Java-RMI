@@ -77,10 +77,8 @@ private void add(Piece s1, Porte p1_2) {
 	// TODO Auto-generated method stub
 	
 }
+ 
+ 		
 
-//public void Deplacement(){
-//	Labyrinthe Lab = new Labyrinthe(Salle,P);
-//}
-}
 	
-
+}
