@@ -5,11 +5,18 @@ import java.util.ArrayList;
 public class Labyrinthe {
 	private ArrayList <Piece> Salle = new ArrayList <Piece>() ;  		
 	private ArrayList<Porte> P = new ArrayList<Porte>();
+	private Piece salleDepart ;
+public Piece getSalleDepart() {
+		return salleDepart;
+	}
 
-public Labyrinthe(ArrayList<Piece> salle, ArrayList<Porte> p) {
+	public void setSalleDepart(Piece salleDepart) {
+		this.salleDepart = salleDepart;
+	}
+
+public Labyrinthe() {
 		super();
-		Salle = salle;
-		P = p;
+		
 	}
 
 public ArrayList<Piece> getSalle() {
@@ -30,14 +37,15 @@ public void setP(ArrayList<Porte> p) {
 
 public void createLabyrinthe(){
  		
- 		Labyrinthe Lab1 = new Labyrinthe (Salle, P) ;
+ 		
  		
  		//Lab.add(e)
  		
  	    //Creation de pieces
 		// A corriger	
  		Position p1 = new Position (1,1) ;
- 		Piece S1 = new Piece ("La Chambre qui pue la mort",p1) ;	
+ 		Piece S1 = new Piece ("La Chambre qui pue la mort",p1) ;
+ 		this.setSalleDepart(S1);
  		Position p2 = new Position (1,2) ;
 		Piece S2 = new Piece ("Le Dongeon du Dragon",p2) ;
 		
@@ -64,12 +72,12 @@ public void createLabyrinthe(){
  		Porte P3_5 = new Porte(S3,S5,p3,p5);
 
 		//Sauvegarde dans l'array Lab
-		Lab1.add(S1,P1_2) ;
-        Lab1.add(S1, P1_3);
-        Lab1.add(S2,P2_3) ;
-        Lab1.add(S2, P2_4);
-        Lab1.add(S3, P3_4);
-        Lab1.add(S3,P3_5);			
+		this.add(S1,P1_2) ;
+        this.add(S1, P1_3);
+        this.add(S2,P2_3) ;
+        this.add(S2, P2_4);
+        this.add(S3, P3_4);
+        this.add(S3,P3_5);			
  			
  		}
 

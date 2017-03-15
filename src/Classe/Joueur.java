@@ -7,24 +7,7 @@ public class Joueur {
 	private String nom ;
 	private int points ;
 	private Piece Salle1 ;
-	public Joueur(String nom, int points, Piece salle1, Position pos) {
-		super();
-		this.nom = nom;
-		this.points = points;
-		Salle1 = salle1;
-		this.pos = pos;
-	}
-	private Position pos ;
-
-	public Position getPos() {
-		return pos;
-	}
-	public void setPos(Position pos) {
-		this.pos = pos;
-	}
-	public Joueur (){
-		super();
-	}
+	
 	public Joueur(String nom, int points, Piece Salle1) {
 		super();
 		this.nom = nom;
