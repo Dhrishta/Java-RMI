@@ -46,7 +46,6 @@ public String getIdPiece() {
 public void addPorte(Porte sortie){
 	
 	listsortie.add(sortie);
-
 	
 }
 }

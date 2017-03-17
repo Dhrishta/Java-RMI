@@ -45,6 +45,7 @@ public void createLabyrinthe(){
  		//Salle de départ = Salle 1
  		this.setSalleDepart(S1);
 		Piece S2 = new Piece ("Le Dongeon du Dragon",2) ;
+		System.out.println("test:"+ S2.getNumero());
 		listeSalle.add(S2);
  		Piece S3 = new Piece ("Les Egouts",3) ;
 		listeSalle.add(S3);

@@ -83,11 +83,19 @@ private static final long serialVersionUID = 1L ;
 			
 			if( sortie.getOrientation().equals(direction) )// si il y a possibilité de sortir 
 			{
+				System.out.println("addr salle 2" + sortie.getSalle2());
+				
+				if (sortie.getSalle2()== null){
+					System.out.println("True");
+				}
+				else
+					System.out.println("salle null");
+					sortie.getSalle2().getNumero();
+				System.out.println(j.getNom());
 				
 					j.setposition(sortie.getSalle2().getNumero()); 
 					System.out.print("bien jouer tu es sorti de la salle");
 					return 0;
-				
 			}
 		
 		}

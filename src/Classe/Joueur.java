@@ -1,6 +1,6 @@
 package Classe;
 
-import java.util.Scanner;
+
 
 public class Joueur {
 
@@ -18,7 +18,7 @@ public class Joueur {
 		return position;
 	}
 	public void setposition(int position) {
-		position = position;
+		this.position = position;
 	}
 	public String getNom() {
 		return nom;
