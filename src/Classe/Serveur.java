@@ -1,5 +1,6 @@
 package Classe;
 
+import java.net.MalformedURLException;
 import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject ;
@@ -26,18 +27,27 @@ public class Serveur extends UnicastRemoteObject implements MudInterface {
 private static final long serialVersionUID = 1L ;
 		
   
- public static void main(String arg []) throws Exception {
+ public static void main(String arg [])  {
 	 //Démarrer le rmi registry
-	 LocateRegistry.createRegistry(1099);
-	 //Gestionnaire de sécurité
-	 //System.setSecurityManager(new RMISecurityManager());
-	 Serveur obj = new Serveur();
-	 Naming.rebind("ServeurMUD", obj) ;
-	 System.out.println("Serveur est connecté!");
+	 try {
+		LocateRegistry.createRegistry(1099);
+		//Gestionnaire de sécurité
+		 //System.setSecurityManager(new RMISecurityManager());
+		 Serveur obj = new Serveur();
+		 Naming.rebind("ServeurMUD", obj) ;
+		 System.out.println("Serveur est connecté!");
+	} catch (RemoteException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
  }
 
-@Override
-public boolean authentificationreussi(String nomP,String password) throws RemoteException
+
+/*public boolean authentificationreussi(String nomP,String password) throws RemoteException
 {
 	// TODO Auto-generated method stub
 	
@@ -51,52 +61,50 @@ public boolean authentificationreussi(String nomP,String password) throws Remote
 	
 	
 	return false;
-}
+}*/
 
 
-@Override
-public void affichage() throws RemoteException {
-	
-	// TODO Auto-generated method stub
-	
-}
 
 
-public void deplacementjoueur(String nomJ, String Direction) throws RemoteException {
-	
-	// TODO Auto-generated method stub
-	Joueur j = lesjoueurs.get(nomJ);
-	Piece P = j.getSalle1() ; 
-	
-	switch(Direction) {
-	case "N": if(P.getN()!= null){
-		if (P == P.getN().getSalle1()) {
-			j.setSalle1(P.getN().getSalle2());
-			j.
-		} 
-	
-	}
+	public void creationJoueur(String nomJ) throws RemoteException{
+	  this.lesjoueurs.put(nomJ, new Joueur(nomJ, 10,1));
+	  System.out.println("Creation Joueur Réussi!");
+   }
+
+	public int deplacementjoueur(String nomJ, String direction) throws RemoteException {
 		
-		break;
+		// TODO Auto-generated method stub
+		Joueur j = lesjoueurs.get(nomJ);
+		int p = j.getposition(); 
+		ArrayList<Porte> listePortes = Labyrinthe1.getSalle().get(p).getListsortie();
+		
+		for ( Porte sortie: listePortes ){
+			System.out.println(p+sortie.getOrientation()+direction);
+			
+			if( sortie.getOrientation().equals(direction) )// si il y a possibilité de sortir 
+			{
+				
+					j.setposition(sortie.getSalle2().getNumero()); 
+					System.out.print("bien jouer tu es sorti de la salle");
+					return 0;
+				
+			}
+		
+		}
+		System.out.print("non sa ne marche pas");
+		return -1;
+	
 	}
 
-}
 
-@Override
-public boolean creationreussi(String nomP, String password) throws RemoteException {
-	// TODO Auto-generated method stub
-	return false;
-}
+	@Override
+	public String getPiece(String nomJ) throws RemoteException {
+		// TODO Auto-generated method stub
+		Joueur j = lesjoueurs.get(nomJ);
+		int p = j.getposition(); 
+		
+		return Labyrinthe1.getSalle().get(p).getIdPiece();
+	}
 
-@Override
-public boolean joueurexistdeja(String nomP, String password) throws RemoteException {
-	// TODO Auto-generated method stub
-	return false;
-}
 
-@Override
-public void deplacementjoueur(Joueur joueur, Position postion) throws RemoteException {
-	// TODO Auto-generated method stub
-	
-}	 
 }

@@ -14,8 +14,8 @@ public class Client {
 	public void connexion (MudInterface MUD)
 	
 	{	
-		Menu M1 = new Menu() ;
-		M1.affichage();
+		Menu M1 = new Menu(MUD) ;
+		M1.affichageMenu1();
 	}
 		
 	public static void main(String[] args) {

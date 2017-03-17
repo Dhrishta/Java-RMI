@@ -3,7 +3,7 @@ package Classe;
 public class Monstre {
 
 	private String nom ;
-	private int points ;
+	private int points=5; ;
 	public String getNom() {
 		return nom;
 	}

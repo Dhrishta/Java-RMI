@@ -1,50 +1,53 @@
 package Classe;
+import java.util.ArrayList;
 
 public class Piece {
 	   // variables
-		private String titrePiece;
-		private Position post ;
-		private Porte N,S,E,W ;
-		public Porte getN() {
-			return N;
-		}
-		public void setN(Porte n) {
-			N = n;
-		}
-		public Porte getS() {
-			return S;
-		}
-		public void setS(Porte s) {
-			S = s;
-		}
-		public Porte getE() {
-			return E;
-		}
-		public void setE(Porte e) {
-			E = e;
-		}
-		public Porte getW() {
-			return W;
-		}
-		public void setW(Porte w) {
-			W = w;
-		}
-		public Piece(String titrePiece, Position post) {
+		private String idPiece;
+		private int numero;
+		private ArrayList <Porte> listsortie = new ArrayList <Porte>() ;
+		public Piece(String idPiece, int numero) {
 			super();
-			this.titrePiece = titrePiece;
-			this.post = post;
+			this.numero = numero;
+			this.idPiece = idPiece ;
 		}
-		public String getTitrePiece() {
-			return titrePiece;
-		}
-		public void setTitrePiece(String titrePiece) {
-			this.titrePiece = titrePiece;
-		}
-		public Position getPost() {
-			return post;
-		}
-		public void setPost(Position post) {
-			this.post = post;
-		}
+
 		
+public String getIdPiece() {
+			return idPiece;
+		}
+
+
+		public void setIdPiece(String idPiece) {
+			this.idPiece = idPiece;
+		}
+
+
+		public int getNumero() {
+			return numero;
+		}
+
+
+		public void setNumero(int numero) {
+			this.numero = numero;
+		}
+
+
+		public ArrayList<Porte> getListsortie() {
+			return listsortie;
+		}
+
+
+		public void setListsortie(ArrayList<Porte> listsortie) {
+			this.listsortie = listsortie;
+		}
+
+
+public void addPorte(Porte sortie){
+	
+	listsortie.add(sortie);
+
+	
 }
+}
+		
